@@ -9,6 +9,7 @@ test:
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget -y
   - easy_install mpi4py
+  - pip install mpi4py
   - mkdir /nfs
   - cd /nfs
   - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
