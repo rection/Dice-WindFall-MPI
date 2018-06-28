@@ -8,6 +8,8 @@ test:
   script:
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget -y
+  - wget https://bootstrap.pypa.io/ez_setup.py -O - |python2.7
+  - easy_install-2.7 pip
   - pip2.7 install mpi4py
   - mkdir /nfs
   - cd /nfs
