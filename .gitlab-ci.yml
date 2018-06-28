@@ -8,7 +8,6 @@ test:
   script:
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget -y
-  - easy_install mpi4py
   - pip install mpi4py
   - mkdir /nfs
   - cd /nfs
