@@ -20,4 +20,4 @@ test:
   - python setup.py build --mpi=other_mpi
   - python setup.py install
   - cd /builds/rection/Dice-WindFall-MPI
-  - mpiexec -n 4 python Zar.py
+  - mpiexec -n 4 python2.7 Zar.py
