@@ -8,8 +8,8 @@ test:
   script:
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget python-mpi4py -y
-  - wget https://bootstrap.pypa.io/ez_setup.py -O - |python2.7
-  - easy_install-2.7 pip
+#   - wget https://bootstrap.pypa.io/ez_setup.py -O - |python2.7
+#   - easy_install-2.7 pip
   - apt-get install 
   - mkdir /nfs
   - cd /nfs
@@ -22,4 +22,4 @@ test:
   - python setup.py build --mpi=other_mpi
   - python setup.py install
   - cd /builds/rection/Dice-WindFall-MPI
-  - sudo mpiexec -n 4 python2.7 Zar.py
+  - mpiexec -n 4 python2.7 Zar.py
