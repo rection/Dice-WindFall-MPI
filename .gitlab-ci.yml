@@ -8,13 +8,10 @@ test:
   script:
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget python-mpi4py python-numpy -y
-#   - wget https://bootstrap.pypa.io/ez_setup.py -O - |python2.7
-#   - easy_install-2.7 pip
   - apt-get install 
   - mkdir /nfs
   - cd /nfs
   - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
-#   - apt-get install gcc gcc-fortran kernel-devel  -y
   - tar -xvf mpi4py-3.0.0.tar.gz
   - cd /nfs/mpi4py-3.0.0
   - python setup.py build
