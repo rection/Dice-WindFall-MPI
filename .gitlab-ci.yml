@@ -7,16 +7,15 @@ before_script:
 test:
   script:
   - apt-get update && apt-get upgrade
-  - pip install mpi4py
   - apt-get install gcc gfortran wget -y
   - mkdir /nfs
   - cd /nfs
-  - wget http://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz
+  - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
 #   - apt-get install gcc gcc-fortran kernel-devel  -y
-  - tar -xvf mpich-3.1.4.tar.gz 
-  - mkdir /nfs/mpich3
-  - cd /nfs/mpich-3.1.4
-  - ./configure --prefix=/nfs/mpich3
+  - tar -xvf mpi4py-3.0.0.tar.gz
+  - mkdir /nfs/mpi4py-3.0.0
+  - cd /nfs/mpi4py-3.0.0
+  - ./configure --prefix=/nfs/mpi4py-3.0.0
   - make
   - make install
   - mpiexec -n 4 python Zar.py
