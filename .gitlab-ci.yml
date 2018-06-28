@@ -7,7 +7,7 @@ before_script:
 test:
   script:
   - apt-get update && apt-get upgrade 
-  - apt-get install mpich gcc gfortran wget python-mpi4py -y
+  - apt-get install mpich gcc gfortran wget python-mpi4py python-numpy -y
 #   - wget https://bootstrap.pypa.io/ez_setup.py -O - |python2.7
 #   - easy_install-2.7 pip
   - apt-get install 
