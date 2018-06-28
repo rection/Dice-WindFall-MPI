@@ -19,6 +19,4 @@ test:
   - python setup.py build --mpicc=/where/you/have/mpicc
   - python setup.py build --mpi=other_mpi
   - python setup.py install
-  - make
-  - make install
   - mpiexec -n 4 python Zar.py
