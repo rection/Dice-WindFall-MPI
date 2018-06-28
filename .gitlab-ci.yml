@@ -1,54 +1,24 @@
 image: python:latest
-stages:
-    - build
-    - test
-    - deploy
 
-# Build
-
-build:
-    stage: build
-    script:
-        - make
-
-# Test
+before_script:
+  - uname -a
+  - python -V                                   # Print out python version for debugging
 
 test:
-    stage: test
-    script:
-        - make test
-        - test/test
-        - gcovr --exclude test -r . | grep TOTAL
-
-# Deploy
-
-deploy:
-    stage: deploy
-    script:
-        - echo "TODO"
-    only:
-        - master
-        - tags
-
-# before_script:
-#   - uname -a
-#   - python -V                                   # Print out python version for debugging
-
-# test:
-#   script:
-#   - apt-get update && apt-get upgrade && yes y | apt-get install mpich
-#   - easy_install mpi4py
-#   - apt-get install gcc gfortran wget -y
-#   - mkdir /nfs
-#   - cd /nfs
-#   - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
-# #   - apt-get install gcc gcc-fortran kernel-devel  -y
-#   - tar -xvf mpi4py-3.0.0.tar.gz
-#   - cd /nfs/mpi4py-3.0.0
-#   - python setup.py build
-#   - python setup.py build --mpicc=/where/you/have/mpicc
-#   - python setup.py build --mpi=other_mpi
-#   - python setup.py install
-#   - make
-#   - make install
-#   - mpiexec -n 4 python Zar.py
+  script:
+  - apt-get update && apt-get upgrade 
+  - apt-get install mpich gcc gfortran wget -y
+  - easy_install mpi4py
+  - mkdir /nfs
+  - cd /nfs
+  - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
+#   - apt-get install gcc gcc-fortran kernel-devel  -y
+  - tar -xvf mpi4py-3.0.0.tar.gz
+  - cd /nfs/mpi4py-3.0.0
+  - python setup.py build
+  - python setup.py build --mpicc=/where/you/have/mpicc
+  - python setup.py build --mpi=other_mpi
+  - python setup.py install
+  - make
+  - make install
+  - mpiexec -n 4 python Zar.py
