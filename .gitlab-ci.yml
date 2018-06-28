@@ -6,6 +6,8 @@ before_script:
 
 test:
   script:
+  - apt-get update && apt-get upgrade
+  - pip install mpi4py
   - apt-get install gcc gfortran wget -y
   - mkdir /nfs
   - cd /nfs
@@ -17,5 +19,4 @@ test:
   - ./configure --prefix=/nfs/mpich3
   - make
   - make install
-  - pip install mpi4py
   - mpiexec -n 4 python Zar.py
