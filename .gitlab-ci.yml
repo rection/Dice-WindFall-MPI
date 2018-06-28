@@ -14,7 +14,10 @@ test:
 #   - apt-get install gcc gcc-fortran kernel-devel  -y
   - tar -xvf mpi4py-3.0.0.tar.gz
   - cd /nfs/mpi4py-3.0.0
-  - ./configure --prefix=/nfs/mpi4py-3.0.0
+  - python setup.py build
+  - python setup.py build --mpicc=/where/you/have/mpicc
+  - python setup.py build --mpi=other_mpi
+  - python setup.py install
   - make
   - make install
   - mpiexec -n 4 python Zar.py
