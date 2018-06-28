@@ -6,7 +6,6 @@ before_script:
 
 test:
   script:
-  - pwd
   - apt-get update && apt-get upgrade 
   - apt-get install mpich gcc gfortran wget -y
   - easy_install mpi4py
@@ -20,7 +19,5 @@ test:
   - python setup.py build --mpicc=/where/you/have/mpicc
   - python setup.py build --mpi=other_mpi
   - python setup.py install
-  - pwd
-  - cd
-  - pwd
+  - cd /builds/rection/Dice-WindFall-MPI
   - mpiexec -n 4 python Zar.py
