@@ -13,7 +13,6 @@ test:
   - wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.0.tar.gz
 #   - apt-get install gcc gcc-fortran kernel-devel  -y
   - tar -xvf mpi4py-3.0.0.tar.gz
-  - mkdir /nfs/mpi4py-3.0.0
   - cd /nfs/mpi4py-3.0.0
   - ./configure --prefix=/nfs/mpi4py-3.0.0
   - make
