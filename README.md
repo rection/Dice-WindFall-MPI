@@ -1,7 +1,11 @@
-Programin amaci on bin tane atilan zarin alti alti gelenleri bulmaktir. Yani zarin duses gelme durumunu bulmaktadir. 
+# Dice Wind Fall MPI
 
-Mpi araciligiyla 4 core ile islem yapilmak uzere cekirdeklere islemeleri dagitmaktadir. 
 
-Programi calistirmak icin 'mpiexec -n 4 python Zar.py' yazilmalidir. 
+The aim of the program is to find the bottom six of the ten thousand rolled dice. So the duses find the state of coming.
+  
+It distributes the process to the cores to be processed with 4 cores via Mpi.
 
-Mpi bilindigi gibi sadece bir haberlesme aracidir. Bu programda Mpi haberlesme aracinin mpi4python eklentisiyle calismaktadir.
+To run the program 'mpiexec -n 4 python Zar.py' must be written.
+
+As is known, mpi is just a communication tool. In this program, Mpi works with the mpi4python plugin of the communication tool.
+
